@@ -2,8 +2,7 @@
 //
 
 #include "stdafx.h"
-#include "stdlib.h"
-#include <math.h>
+
 #define cot  1 / tan
 typedef double(*func_t)(double);
 double trapezia_metod(func_t, double, double, double);
