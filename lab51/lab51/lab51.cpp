@@ -2,9 +2,6 @@
 //
 
 #include "stdafx.h"
-#include <stdio.h>
-#include <math.h>
-#include "windows.h"
 
 typedef double(*func_t)(double);
 
