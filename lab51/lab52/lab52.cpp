@@ -2,8 +2,7 @@
 //
 
 #include "stdafx.h"
-#include <Windows.h>
-#include <math.h>
+
 #define SIGN_FUNC(func, x) ((func(x) > 0)? 1 : (func(x) < 0)? -1 : 0)
 #define CHECK_ROOT_TOL(func, x, e)\
 if (fabs(func(x)) <= (e))\
