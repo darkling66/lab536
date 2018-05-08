@@ -19,7 +19,6 @@ int main()
 {
 	FILE *file;
 	char txt[] = "D:\\source\\repos\\lab 5\\lab5.txt";
-	int nVal = 123;
 	file = fopen(txt, "w");
 	if (!file)
 	{
