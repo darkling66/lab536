@@ -12,7 +12,7 @@ void process_func(
 	, double(*pf)(double)
 );
 
-int tabulate_func(func_t);
+int tabulate_func(func_t, FILE*);
 double f(double);
 
 int main()
@@ -25,15 +25,21 @@ int main()
 		printf("Error open file %s\n", txt);
 		return -1;
 	}
-	fprintf(file, "%d\n", tabulate_func(f));
+	tabulate_func(f, file);
 	system("pause");
 	return 0;
 }
 
-int tabulate_func(func_t f)
+int tabulate_func(func_t f, FILE* fp)
 {
 	double a = -1, b = 2, h = 0.1;
+	double x = a;
 	process_func(a, b, h, f);
+	for (; x <= b; x += h) {
+		double y = f(x);
+		FILE* pf = fp ? fp : stdout;
+		fprintf(pf, "%f %f\n", x, y);
+	}
 	printf("\n");
 	return 0;
 }
@@ -112,6 +118,7 @@ void process_func(
 			get_mark_extr(y, 3, mark);
 			printf("%.3f %.3f %s\n", x[j], y[j], mark);
 		}
+
 	}
 
 }
